@@ -10,7 +10,7 @@ Dynamic Website in Django for little lemon restaurant
 [Meta Backend Developer](https://www.coursera.org/professional-certificates/meta-back-end-developer)
 
 
-## ⭐ Highlights
+## ✨ Highlights
 
 - Dynamic Website: Create a fully dynamic website using Django.
 - Menu Showcase: Highlight the menu pages of the Little Lemon restaurant.
