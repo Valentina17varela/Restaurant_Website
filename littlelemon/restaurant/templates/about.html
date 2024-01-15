@@ -3,92 +3,88 @@
 <!DOCTYPE html>
 <html>
 
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-<head>
-  <title>{% block title %}About{% endblock %}</title>
-  {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
-  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-  <link rel="icon " href="{% static 'images/icon.png' %}">
-</head>
+  <head>
+    <title>{% block title %}About{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  </head>
 
-<body>
+  <body>
 
     <nav class="navbar navbar-expand-lg fixed-top bg-green navbar-light" id="nav">
         <div class="container">
-          <a class="navbar-brand" href="#"
-            ><img
-              src="{% static 'images/icon.png' %}"
-              alt="Logo"
-              draggable="false"
-              height="60"
-          /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="fas fa-bars"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto align-items-center">
-              <li class="nav-item">
-                <a class="nav-link mx-2" href="{% url 'home' %}"><i class="fas fa-plus-circle pe-2"></i>Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link mx-2" href="#!"><i class="fas fa-bell pe-2"></i>Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link mx-2" href="#!"><i class="fas fa-bell pe-2"></i>Reservation</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link mx-2" href="{% url 'about' %}"><i class="fas fa-heart pe-2"></i>About</a>
-              </li>
-              <li class="nav-item ms-3">
-                <a class="btn btn-black btn-rounde" href="#!">Log in</a>
-              </li>
-            </ul>
-          </div>
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'images/icon.png' %}" alt="Logo" draggable="false" height="60">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="{% url 'home' %}">
+                            <i class="fas fa-plus-circle pe-2"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="#!">
+                            <i class="fas fa-bell pe-2"></i>Menu
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="#!">
+                            <i class="fas fa-bell pe-2"></i>Reservation
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="{% url 'about' %}">
+                            <i class="fas fa-heart pe-2"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-black btn-rounded" href="#!">Log in</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <div class="content">
 
-        <div class="row">
-            <div class="col-md-6 text-center">
-                <img  src="{% static 'images/logo.png' %}" alt="icon">
-            </div>
-            <div class="col-md-6 text-justify">
-                <h2 class="text-center">Little Lemon Restaurant</h2>
-                <p>Welcome to our chain of restaurants, a culinary corner that has conquered North America with its exquisite gastronomic offerings. With more than 10 strategic locations in the main cities of the continent, we are proud to be the favorite destination for lovers of good food and hospitality.</p>
-                <p>Our commitment is simple but powerful: fusing tradition with innovation. Every dish that leaves our kitchens is a masterpiece carefully crafted by our talented chefs. From classic homemade flavors to avant-garde creations, every bite is a unique experience.</p>
-                <b>What sets us apart?</b>
-                <ul class="list-group list-group-light">
-                    <li class="list-group-item">Variety of flavors: Our menu is a sensory journey from the spicy aromas of Mexican cuisine to the delicacy of Japanese sushi. Whatever your craving, you'll find it here.</li>
-                    <li class="list-group-item">Cozy atmosphere: Our restaurants are more than places to eat; they are spaces where laughter flows, friendships are forged and special moments are celebrated. The warm décor and personalized attention will make you feel at home.</li>
-                    <li class="list-group-item">Fresh ingredients: We take the quality of our ingredients seriously. We work with local suppliers to ensure that every dish is full of flavor and freshness.</li>
-                    <li class="list-group-item">Memorable events: Do you have a special occasion? Let us be a part of it. From romantic dinners to corporate parties, our rooms are ready to welcome you.</li>
-                </ul>
-                <br>
-                <strong>Join us and discover why we are so much more than a restaurant. We are a dining experience that leaves an impression on the palate and the heart.</strong>
-            </div>
-        </div>
-          
+          <div class="row">
+              <div class="col-md-6 text-center">
+                  <img  src="{% static 'images/logo.png' %}" alt="icon">
+              </div>
+              <div class="col-md-6 text-justify">
+                  <h2 class="text-center">Little Lemon Restaurant</h2>
+                  <p>Welcome to our chain of restaurants, a culinary corner that has conquered North America with its exquisite gastronomic offerings. With more than 10 strategic locations in the main cities of the continent, we are proud to be the favorite destination for lovers of good food and hospitality.</p>
+                  <p>Our commitment is simple but powerful: fusing tradition with innovation. Every dish that leaves our kitchens is a masterpiece carefully crafted by our talented chefs. From classic homemade flavors to avant-garde creations, every bite is a unique experience.</p>
+                  <b>What sets us apart?</b>
+                  <ul class="list-group list-group-light">
+                      <li class="list-group-item">Variety of flavors: Our menu is a sensory journey from the spicy aromas of Mexican cuisine to the delicacy of Japanese sushi. Whatever your craving, you'll find it here.</li>
+                      <li class="list-group-item">Cozy atmosphere: Our restaurants are more than places to eat; they are spaces where laughter flows, friendships are forged and special moments are celebrated. The warm décor and personalized attention will make you feel at home.</li>
+                      <li class="list-group-item">Fresh ingredients: We take the quality of our ingredients seriously. We work with local suppliers to ensure that every dish is full of flavor and freshness.</li>
+                      <li class="list-group-item">Memorable events: Do you have a special occasion? Let us be a part of it. From romantic dinners to corporate parties, our rooms are ready to welcome you.</li>
+                  </ul>
+                  <br>
+                  <strong>Join us and discover why we are so much more than a restaurant. We are a dining experience that leaves an impression on the palate and the heart.</strong>
+              </div>
+          </div>
+            
     </div>
 
     <footer class="bg-body-tertiary text-center bg-green">
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-          © 2024 Copyright:
-          <a class="text-body" href="https://www.linkedin.com/in/valentinavarelaalzate/">Varela AV Company</a>
-        </div>
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Copyright:
+            <a class="text-body" href="https://www.linkedin.com/in/valentinavarelaalzate/">Varela AV Company</a>
+          </div>
     </footer>
 
-</body>
+  </body>
 
 </html>
