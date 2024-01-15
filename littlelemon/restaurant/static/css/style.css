@@ -1,3 +1,20 @@
 .navbar-light .navbar-nav .nav-link {
   color: #000;
 }
+
+.content {
+  margin: 10rem 2rem;
+}
+
+.bg-green {
+  background-color: rgb(180, 219, 180);
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
