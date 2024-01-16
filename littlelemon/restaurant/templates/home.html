@@ -3,68 +3,101 @@
 <!DOCTYPE html>
 <html>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <head>
+<head>
     <title>{% block title %}Little Lemon{% endblock %}</title>
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <nav class="navbar navbar-expand-lg fixed-top bg-green navbar-light" id="nav">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="{% static 'images/icon.png' %}" alt="Logo" draggable="false" height="60">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto align-items-center">
-                        <li class="nav-item">
-                            <a class="nav-link mx-2" href="{% url 'home' %}">
-                                <i class="fas fa-plus-circle pe-2"></i>Home
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-2" href="#!">
-                                <i class="fas fa-bell pe-2"></i>Menu
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-2" href="#!">
-                                <i class="fas fa-bell pe-2"></i>Reservation
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-2" href="{% url 'about' %}">
-                                <i class="fas fa-heart pe-2"></i>About
-                            </a>
-                        </li>
-                        <li class="nav-item ms-3">
-                            <a class="btn btn-black btn-rounded" href="#!">Log in</a>
-                        </li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-expand-lg fixed-top bg-green navbar-light" id="nav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'images/icon.png' %}" alt="Logo" draggable="false" height="60">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="{% url 'home' %}">
+                            <i class="fas fa-plus-circle pe-2"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="#!">
+                            <i class="fas fa-bell pe-2"></i>Menu
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="#!">
+                            <i class="fas fa-bell pe-2"></i>Reservation
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="{% url 'about' %}">
+                            <i class="fas fa-heart pe-2"></i>About Us
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-        
+        </div>
+    </nav>
 
-        <div class="content">
+
+    <div class="content">
+
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+
+        <div class="comment-box" style="width: 50%;  margin: 0 auto;">
+            <h2 style="text-align: center;">Send your comments</h2>
+            <p style="text-align: center;">Your opinion is invaluable and helps us to grow, thank you for being part of
+                our journey!</p>
+            <form method="post" action="{% url 'home' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" class="form-control" rows="3"
+                        placeholder="Your Message"></textarea>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary btn-block" style="width: 30%;">Send</button>
+                </div>
+            </form>
         </div>
 
-        <footer class="bg-body-tertiary text-center bg-green">
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    </div>
+
+    <footer class="bg-body-tertiary text-center bg-green">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
             © 2024 Copyright:
             <a class="text-body" href="https://www.linkedin.com/in/valentinavarelaalzate/">Varela AV Company</a>
-            </div>
-        </footer>
-        
-    </body>
+        </div>
+    </footer>
+
+</body>
 
 </html>

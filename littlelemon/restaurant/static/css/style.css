@@ -18,3 +18,21 @@ footer {
   bottom: 0;
   z-index: 0;
 }
+
+.alert {
+  position: fixed;
+  top: 7rem;
+  right: 5rem;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.alert-success {
+  background-color: rgb(88, 201, 148);
+  color: white;
+}
+.alert-error{
+  background-color: rgb(243, 62, 86);
+  color: white;
+}
+
