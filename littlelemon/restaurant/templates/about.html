@@ -3,25 +3,26 @@
 <!DOCTYPE html>
 <html>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <head>
+<head>
     <title>{% block title %}About{% endblock %}</title>
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-  </head>
+</head>
 
-  <body class="bg-light">
+<body class="bg-light">
 
     <nav class="navbar navbar-expand-lg fixed-top bg-green navbar-light" id="nav">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="{% static 'images/icon.png' %}" alt="Logo" draggable="false" height="50">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -53,35 +54,66 @@
 
     <div class="content">
 
-          <div class="row">
-              <div class="col-md-6 text-center">
-                  <img  src="{% static 'images/logo.png' %}" alt="icon">
-              </div>
-              <div class="col-md-6 text-justify">
-                  <h2 class="text-center">Little Lemon Restaurant</h2>
-                  <p>Welcome to our chain of restaurants, a culinary corner that has conquered North America with its exquisite gastronomic offerings. With more than 10 strategic locations in the main cities of the continent, we are proud to be the favorite destination for lovers of good food and hospitality.</p>
-                  <p>Our commitment is simple but powerful: fusing tradition with innovation. Every dish that leaves our kitchens is a masterpiece carefully crafted by our talented chefs. From classic homemade flavors to avant-garde creations, every bite is a unique experience.</p>
-                  <b>What sets us apart?</b>
-                  <ul class="list-group list-group-light">
-                      <li class="list-group-item">Variety of flavors: Our menu is a sensory journey from the spicy aromas of Mexican cuisine to the delicacy of Japanese sushi. Whatever your craving, you'll find it here.</li>
-                      <li class="list-group-item">Cozy atmosphere: Our restaurants are more than places to eat; they are spaces where laughter flows, friendships are forged and special moments are celebrated. The warm décor and personalized attention will make you feel at home.</li>
-                      <li class="list-group-item">Fresh ingredients: We take the quality of our ingredients seriously. We work with local suppliers to ensure that every dish is full of flavor and freshness.</li>
-                      <li class="list-group-item">Memorable events: Do you have a special occasion? Let us be a part of it. From romantic dinners to corporate parties, our rooms are ready to welcome you.</li>
-                  </ul>
-                  <br>
-                  <strong>Join us and discover why we are so much more than a restaurant. We are a dining experience that leaves an impression on the palate and the heart.</strong>
-              </div>
-          </div>
-            
+        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                    aria-label="Slide 1" aria-current="true"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+                    class=""></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="height: 15rem;">
+                    <img src="{% static 'images/fondo1.jpg' %}">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <p class="text-carousel">Welcome to our chain of restaurants, a culinary corner that has
+                                conquered North America with its exquisite gastronomic offerings. With more than 10
+                                strategic locations in the main cities of the continent, we are proud to be the favorite
+                                destination for lovers of good food and hospitality.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item" style="height: 15rem;">
+                    <img src="{% static 'images/fondo2.jpg' %}">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <p class="text-carousel">Our commitment is simple but powerful: fusing tradition with
+                                innovation. Every dish that leaves our kitchens is a masterpiece carefully crafted by
+                                our talented chefs. From classic homemade flavors to avant-garde creations, every bite
+                                is a unique experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <br>
+        <img src="{% static 'images/logo.png' %}" class="mx-auto d-block" alt="icon" height="300"
+            style="margin: 0 auto;">
+        <br>
+        <br>
+        <h4>Join us and discover why we are so much more than a restaurant. We are a dining experience that leaves an
+            impression on the palate and the heart.</h4>
+
     </div>
 
     <footer class="bg-body-tertiary text-center bg-green-dark">
-          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
             © 2024 Copyright:
             <a class="text-body" href="https://www.linkedin.com/in/valentinavarelaalzate/">Varela AV Company</a>
-          </div>
+        </div>
     </footer>
 
-  </body>
+</body>
 
 </html>

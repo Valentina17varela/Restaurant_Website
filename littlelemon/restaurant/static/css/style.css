@@ -40,3 +40,10 @@ footer {
   background-color: rgb(243, 62, 86);
   color: white;
 }
+
+.text-carousel {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000000;
+}
