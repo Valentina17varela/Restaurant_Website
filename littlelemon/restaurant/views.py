@@ -3,9 +3,11 @@ from django.template import loader
 from django.shortcuts import render, redirect
 from .forms import RecomendationForm
 from django.contrib import messages
+from .models import Recomendation
 
 
 def home(request):
+    recommendations = Recomendation.objects.order_by("-created_at")[:5]
     if request.method == "POST":
         form = RecomendationForm(request.POST)
         if form.is_valid():
@@ -17,7 +19,7 @@ def home(request):
     else:
         form = RecomendationForm()
 
-    return render(request, "home.html", {"form": form})
+    return render(request, "home.html", {"recommendations": recommendations})
 
 
 def about(request):

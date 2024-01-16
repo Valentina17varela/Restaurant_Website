@@ -10,6 +10,10 @@
   background-color: rgb(217, 245, 217);
 }
 
+.bg-green-dark {
+  background-color: rgb(171, 224, 171);
+}
+
 footer {
   text-align: center;
   position: fixed;
@@ -31,8 +35,8 @@ footer {
   background-color: rgb(88, 201, 148);
   color: white;
 }
-.alert-error{
+
+.alert-error {
   background-color: rgb(243, 62, 86);
   color: white;
 }
-

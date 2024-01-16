@@ -13,12 +13,12 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 
-<body>
+<body class="bg-light">
 
     <nav class="navbar navbar-expand-lg fixed-top bg-green navbar-light" id="nav">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="{% static 'images/icon.png' %}" alt="Logo" draggable="false" height="60">
+                <img src="{% static 'images/icon.png' %}" alt="Logo" draggable="false" height="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -63,35 +63,49 @@
         </ul>
         {% endif %}
 
-        <div class="comment-box" style="width: 50%;  margin: 0 auto;">
-            <h2 style="text-align: center;">Send your comments</h2>
-            <p style="text-align: center;">Your opinion is invaluable and helps us to grow, thank you for being part of
-                our journey!</p>
-            <form method="post" action="{% url 'home' %}">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" class="form-control" placeholder="Your Name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" class="form-control" placeholder="Your Email">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" class="form-control" rows="3"
-                        placeholder="Your Message"></textarea>
-                </div>
-                <hr>
-                <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary btn-block" style="width: 30%;">Send</button>
-                </div>
-            </form>
+        <div class="my-3 p-3 bg-white rounded box-shadow" style="width: 80%;  margin: 0 auto;">
+            <h4 class="border-bottom border-gray pb-2 mb-0">Our Community</h4>
+            <div class="media text-muted pt-3">
+                {% for recommendation in recommendations %}
+                <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block text-gray-dark">@{{ recommendation.name }}</strong>
+                    {{ recommendation.message }}
+                </p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="my-3 p-3 bg-white rounded box-shadow" style="width: 80%;  margin: 0 auto;">
+            <h4 class="border-bottom border-gray pb-2 mb-0">Send your comments</h4>
+            <h6 class="border-bottom border-gray pb-2 mb-0">Your opinion is invaluable and helps us to grow, thank you for being part of
+                our journey!</h6>
+            <div class="media text-muted pt-3">
+                <form method="post" action="{% url 'home' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" class="form-control" rows="3"
+                            placeholder="Your Message"></textarea>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-success btn-block" style="width: 30%;">Send</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
     </div>
 
-    <footer class="bg-body-tertiary text-center bg-green">
+    <footer class="bg-body-tertiary text-center bg-green-dark">
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
             © 2024 Copyright:
             <a class="text-body" href="https://www.linkedin.com/in/valentinavarelaalzate/">Varela AV Company</a>
