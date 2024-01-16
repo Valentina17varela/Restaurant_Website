@@ -5,7 +5,8 @@ class MenuItems(models.Model):
     name = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=6, decimal_places=2, db_index=True)
     description = models.CharField(max_length=250)
-    images = models.ImageField(upload_to="images/")
+    images = models.ImageField(upload_to="restaurant/static/images")
+    image_path = models.CharField(max_length=255)
 
 
 class Booking(models.Model):

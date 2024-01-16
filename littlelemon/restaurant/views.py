@@ -3,7 +3,8 @@ from django.template import loader
 from django.shortcuts import render, redirect
 from .forms import RecomendationForm
 from django.contrib import messages
-from .models import Recomendation
+from .models import Recomendation, MenuItems
+from django.views.generic import ListView
 
 
 def home(request):
@@ -31,9 +32,10 @@ def book(request):
     return HttpResponse("Hello world!")
 
 
-def menu(request):
-    return HttpResponse("Hello world!")
+class MenuItemsListView(ListView):
+    model = MenuItems
+    template_name = "menu.html"
+    context_object_name = "menu_items"
 
-
-def menu_item(request):
-    return HttpResponse("Hello world!")
+    def get_queryset(self):
+        return MenuItems.objects.all()
