@@ -9,6 +9,7 @@ from django.views.generic import ListView
 
 def home(request):
     recommendations = Recomendation.objects.order_by("-created_at")[:5]
+    menu_items = MenuItems.objects.all()[:3]
     if request.method == "POST":
         form = RecomendationForm(request.POST)
         if form.is_valid():
@@ -20,7 +21,11 @@ def home(request):
     else:
         form = RecomendationForm()
 
-    return render(request, "home.html", {"recommendations": recommendations})
+    return render(
+        request,
+        "home.html",
+        {"recommendations": recommendations, "menu_items": menu_items},
+    )
 
 
 def about(request):
