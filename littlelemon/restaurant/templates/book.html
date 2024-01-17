@@ -36,22 +36,22 @@
         <ul class="navbar-nav ms-auto align-items-center">
           <li class="nav-item">
             <a class="nav-link mx-2" href="{% url 'home' %}">
-              <i class="fas fa-plus-circle pe-2"></i>Home
+              Home
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-2" href="{% url 'menu' %}">
-              <i class="fas fa-bell pe-2"></i>Menu
+              Menu
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-2" href="{% url 'book' %}">
-              <i class="fas fa-bell pe-2"></i>Reservation
+              Reservation
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-2" href="{% url 'about' %}">
-              <i class="fas fa-heart pe-2"></i>About Us
+              About Us
             </a>
           </li>
         </ul>
@@ -61,12 +61,12 @@
 
   <div class="content">
     <h1 class="jumbotron-heading text-center">Reserve a table</h1>
-    <br><br>
+    <br>
 
     <div class="row">
 
       <div class="col-md-8 order-md-1">
-        <h4 class=" mb-3">Information</h4>
+        <h4 class=" mb-3" style="text-align: center;">Information</h4>
         <form method="post" class="needs-validation">
           {% csrf_token %}
           <div class="row form-group">
@@ -150,29 +150,49 @@
             </div>
 
           </div>
-          <button class="btn btn-success btn-lg btn-block" type="submit">Send reservation</button>
+
+          <div class="d-flex justify-content-center">
+            <button style="width: 20%;" class="btn btn-success btn-lg btn-block" type="submit">Send</button>
+          </div>
         </form>
       </div>
 
       <div class="col-md-4 order-md-2 mb-4">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-muted">Your Reservation</span>
+        <h4 class="d-flex justify-content-between align-items-center mb-3" style="margin: 0 auto;">
+          <span class="text-muted" style="margin: 0 auto;">Your Reservation</span>
         </h4>
+        <ul class="list-group mb-3">
+        </ul>
         <ul class="list-group">
           <li class="list-group-item d-flex justify-content-between lh-condensed">
-            <strong>Name:</strong> {{ booking.first_name }} {{ booking.last_name }}
+            <div>
+              <h6 class="my-0">Name</h6>
+              <p class="text-muted">{{ booking.first_name }} {{ booking.last_name }}</p>
+            </div>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-condensed">
-            <strong>Identification:</strong> {{ booking.identification_number }}
+            <div>
+              <h6 class="my-0">Identification</h6>
+              <p class="text-muted">{{ booking.identification_number }}</p>
+            </div>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-condensed">
-            <strong>Phone:</strong> {{ booking.phone_number }}
+            <div>
+              <h6 class="my-0">Phone</h6>
+              <p class="text-muted">{{ booking.phone_number }}</p>
+            </div>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-condensed">
-            <strong>Number of guests:</strong> {{ booking.guests }}
+            <div>
+              <h6 class="my-0">Number of guests</h6>
+              <p class="text-muted">{{ booking.guests }}</p>
+            </div>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-condensed">
-            <strong>Reservation Date:</strong> {{ booking.reservation_date }} {{ booking.reservation_time }}
+            <div>
+              <h6 class="my-0">Reservation Date</h6>
+              <p class="text-muted">{{ booking.reservation_date }} {{ booking.reservation_time }}</p>
+            </div>
           </li>
         </ul>
         {% if messages %}
