@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "restaurant",
     "bootstrap5",
+    "bootstrap_datepicker_plus",
 ]
 
 MIDDLEWARE = [
