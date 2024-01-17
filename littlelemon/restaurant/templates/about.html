@@ -54,58 +54,46 @@
 
     <div class="content">
 
-        <h1 class="jumbotron-heading text-center">About us</h1>
-
-        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
-                    aria-label="Slide 1" aria-current="true"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
-                    class=""></button>
-            </div>
-
-            <div class="carousel-inner">
-                <div class="carousel-item active" style="height: 15rem;">
-                    <img src="{% static 'images/setBreakfast.jpg' %}" style="height: 400%; width: 100%;">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <p class="text-carousel">Welcome to our chain of restaurants, a culinary corner that has
-                                conquered North America with its exquisite gastronomic offerings. With more than 10
-                                strategic locations in the main cities of the continent, we are proud to be the favorite
-                                destination for lovers of good food and hospitality.</p>
-                        </div>
+        <section class="py-3 py-md-5 py-xl-8">
+            <div class="container">
+                <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+                    <div class="col-12 col-lg-6 col-xl-5">
+                        <img src="{% static 'images/logo.png' %}" class="mx-auto d-block" alt="icon" height="400"
+                            style="margin: 0 auto;">
                     </div>
-                </div>
-
-                <div class="carousel-item" style="height: 15rem;">
-                    <img src="{% static 'images/setFood.jpg' %}" style="height: 350%; width: 100%;">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <p class="text-carousel">Our commitment is simple but powerful: fusing tradition with
-                                innovation. Every dish that leaves our kitchens is a masterpiece carefully crafted by
-                                our talented chefs. From classic homemade flavors to avant-garde creations, every bite
-                                is a unique experience.</p>
+                    <div class="col-12 col-lg-6 col-xl-7">
+                        <div class="row justify-content-xl-center">
+                            <div class="col-12 col-xl-11">
+                                <h2 class="h1 mb-3" style="width: 80%;  margin: 0 auto; text-align: center;">Who Are We?
+                                </h2>
+                                <p class="lead fs-4 text-secondary mb-3"
+                                    style="width: 80%;  margin: 0 auto; text-align: justify;">Welcome to our chain of
+                                    restaurants, a culinary
+                                    corner that has
+                                    conquered North America with its exquisite gastronomic offerings. With more than 10
+                                    strategic locations in the main cities of the continent, we are proud to be the
+                                    favorite
+                                    destination for lovers of good food and hospitality.</p>
+                                <p class="mb-5" style="width: 80%;  margin: 0 auto; text-align: justify;">Our commitment
+                                    is simple but powerful: fusing tradition with
+                                    innovation. Every dish that leaves our kitchens is a masterpiece carefully crafted
+                                    by
+                                    our talented chefs. From classic homemade flavors to avant-garde creations, every
+                                    bite
+                                    is a unique experience.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+        </section>
+
+        <div class="jumbotron p-3 p-md-5 text-white rounded bg-warning"
+            style="width: 80%; margin: 0 auto; text-align: center;">
+            <h3 class="display-4 font-italic">Join us</h3>
+            <h4 class="lead my-3">Discover why we are so much more than a restaurant. We are a dining experience that
+                leaves an impression on the palate and the heart</h4>
         </div>
-
-        <br>
-        <img src="{% static 'images/logo.png' %}" class="mx-auto d-block" alt="icon" height="300"
-            style="margin: 0 auto;">
-        <br>
-        <br>
-        <h4>Join us and discover why we are so much more than a restaurant. We are a dining experience that leaves an
-            impression on the palate and the heart.</h4>
 
     </div>
 
