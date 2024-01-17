@@ -10,6 +10,8 @@ Dynamic Website API in Django for little lemon restaurant, responsive design
 > *📝* This repository represents the culmination of a journey through a backend development course specialization: 
 [Meta Backend Developer](https://www.coursera.org/professional-certificates/meta-back-end-developer) and a bit of personal flair, exploring functionalities that add business value
 
+In this video you can find in detail the operation of the page: [Functionality🎥](https://youtu.be/gxG9py3eWNk)
+
 ## 🍽️ Functionalities
 
 Food list:
